@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../config/site.config';
 import Card from '../../components/Card/Card';
+import { Link } from 'react-router-dom';
 
 export default function VideosListPage() {
   // states
@@ -18,7 +19,14 @@ export default function VideosListPage() {
   // render
   return (
     <div className="container">
-      <h2>Lista de videos</h2>
+      <div className="row align-items-center justify-content-between my-3">
+        <div className="col">
+          <h2>Lista de videos</h2>
+        </div>
+        <div className="col text-end">
+          <Link to="" className="btn btn-outline-primary">Nuevo video <i class="bi bi-plus-square-fill"/></Link>
+        </div>
+      </div>
       <div className="row">
         {videos.map((video, index) => {
           return (

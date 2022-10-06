@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { api } from '../../config/site.config';
 
 export default function VideoPage() {
@@ -29,7 +29,20 @@ export default function VideoPage() {
           <h2>{video.title}</h2>
           <p>Autor: {video.authorName}</p>
           <p>{video.description}</p>
+          <p>
+            <Link to={'/video/edit/' + videoId} className="btn btn-outline-primary">
+              <i class="bi bi-pencil-square"></i>Editar
+            </Link>
+          </p>
+          <p>
+            <Link to="/videos" className="btn btn-outline-primary">
+              <i class="bi bi-list-columns-reverse"></i> Listado de Video
+            </Link>
+          </p>
         </div>
+      </div>
+      <div className="row">
+        <div className="col"></div>
       </div>
     </div>
   );

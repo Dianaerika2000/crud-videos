@@ -12,6 +12,7 @@ import MyProfilePage from './pages/Admin/MyProfilePage/MyProfilePage';
 import axiosInterceptor from './utility/axios-token-interceptor';
 import VideosListPage from './pages/VideosPage/VideosListPage';
 import VideoPage from './pages/VideosPage/VideoPage';
+import VideoEditPage from './pages/VideosPage/VideoEditPage';
 
 /**
  * Main App component
@@ -49,11 +50,11 @@ const App = () => {
             }
           />
           <Route path="videos" element={<VideosListPage />} />
-          {/* <Route path="book">
-            <Route path=":bookId" element={<BookPage/>}/>
-          </Route> */}
           <Route path="video">
             <Route path=":videoId" element={<VideoPage />} />
+          </Route>
+          <Route path="video/edit">
+            <Route path=":videoId" element={<VideoEditPage/>}/>
           </Route>
         </Routes>
       </div>
