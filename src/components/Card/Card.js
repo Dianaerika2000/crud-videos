@@ -1,21 +1,23 @@
-import moment from 'moment';
-
-export default function Card({ image, text, newsDate }) {
+import { Link } from 'react-router-dom';
+export default function Card({ video, title, linkVisualizar, linkEdit }) {
   return (
     <div>
       <div className="card">
-        <img src={image} className="card-img-top" alt="cardImagen" />
+        <div className="ratio ratio-16x9 card-img-top">
+          <iframe src={video} title="YouTube video" allowfullscreen></iframe>
+        </div>
         <div className="card-body">
-          <p className="card-text">{text}</p>
-          <div className='row'>
-            <div className='col'>
-                <div className='btn-group' role="group">
-                    <button type="button" className="btn btn-outline-primary">View</button>
-                    <button type="button" className="btn btn-outline-primary">Edit</button>
-                </div>
-            </div>
-            <div className='col d-flex justify-content-end'>
-                <p>{moment(newsDate).fromNow()}</p>
+          <p className="card-text">{title}</p>
+          <div className="row">
+            <div className="col">
+              <div className="btn-group" role="group">
+                <Link to={linkVisualizar} className="btn btn-outline-primary">
+                  Ver
+                </Link>
+                <Link to={linkEdit} className="btn btn-outline-primary">
+                  Editar
+                </Link>
+              </div>
             </div>
           </div>
         </div>
