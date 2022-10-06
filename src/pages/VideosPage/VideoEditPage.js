@@ -20,7 +20,7 @@ export default function VideoEditPage() {
         setVideo(response.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [videoId]);
 
   // handle
   const handleClickSubmit = () => {

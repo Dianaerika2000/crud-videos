@@ -14,7 +14,7 @@ export default function VideoPage() {
         setVideo(response.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [videoId]);
 
   // render
   return (
