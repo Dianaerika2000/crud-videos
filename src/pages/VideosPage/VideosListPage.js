@@ -24,7 +24,7 @@ export default function VideosListPage() {
           <h2>Lista de videos</h2>
         </div>
         <div className="col text-end">
-          <Link to="" className="btn btn-outline-primary">Nuevo video <i class="bi bi-plus-square-fill"/></Link>
+          <Link to={'/video/create/'} className="btn btn-outline-primary">Nuevo video <i class="bi bi-plus-square-fill"/></Link>
         </div>
       </div>
       <div className="row">

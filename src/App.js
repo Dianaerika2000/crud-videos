@@ -13,6 +13,7 @@ import axiosInterceptor from './utility/axios-token-interceptor';
 import VideosListPage from './pages/VideosPage/VideosListPage';
 import VideoPage from './pages/VideosPage/VideoPage';
 import VideoEditPage from './pages/VideosPage/VideoEditPage';
+import VideoCreatePage from './pages/VideosPage/VideoCreatePage';
 
 /**
  * Main App component
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="video/edit">
             <Route path=":videoId" element={<VideoEditPage/>}/>
           </Route>
+          <Route path="video/create" element={<VideoCreatePage/>}/>
         </Routes>
       </div>
     </BrowserRouter>

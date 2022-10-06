@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../../config/site.config';
 
 export default function VideoCreatePage() {
@@ -11,21 +11,10 @@ export default function VideoCreatePage() {
     video: '',
     authorName: '',
   });
-  // init
-  const { videoId } = useParams();
-  useEffect(() => {
-    api
-      .get('https://example-data.draftbit.com/videos/' + videoId)
-      .then((response) => {
-        setVideo(response.data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  // handle
+  // handlers
   const handleClickSubmit = () => {
     api
-      .put('https://example-data.draftbit.com/videos/' + videoId, video)
+      .post('https://example-data.draftbit.com/videos/', video)
       .then((response) => {
         navigate('/video/' + response.data.id);
       })
@@ -36,7 +25,7 @@ export default function VideoCreatePage() {
     <div className="container">
       <div className="row">
         <div className="col">
-          <h2>Editar Video</h2>
+          <h2>Crear Video</h2>
           <form onSubmit={(e) => {
             e.preventDefault();
           }}>
@@ -83,7 +72,7 @@ export default function VideoCreatePage() {
               ></textarea>
             </div>
             <button type="submit" className="btn btn-primary" onClick={handleClickSubmit}>
-              Editar video
+              Crear nuevo video
             </button>
           </form>
         </div>
