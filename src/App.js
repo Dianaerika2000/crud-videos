@@ -24,7 +24,7 @@ const App = () => {
   // options
   let navBarOptions = {
     main: [
-      { option: 'Home', to: '/' },
+      // { option: 'Home', to: '/' },
       { option: 'Videos', to: '/videos' },
     ],
     right: [
